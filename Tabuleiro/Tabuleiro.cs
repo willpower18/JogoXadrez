@@ -29,6 +29,16 @@ namespace Jogo.Tabuleiro{
             peca.Posicao = posicao;
         }
 
+        public Peca RetirarPeca(Posicao posicao){
+            if(ObterPeca(posicao) == null)
+                return null;
+            
+            Peca pecaNaPosicao = ObterPeca(posicao);
+            pecaNaPosicao.Posicao = null;
+            Pecas[posicao.Linha, posicao.Coluna] = null;
+            return pecaNaPosicao;
+        }
+
         public bool ExistePeca(Posicao posicao){
             ValidarPosicao(posicao);
             return ObterPeca(posicao) != null;

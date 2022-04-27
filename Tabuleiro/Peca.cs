@@ -13,5 +13,9 @@ namespace Jogo.Tabuleiro{
         public Cor Cor { get; set; }
         public int QuantidadeMovimentos { get; set; }
         public Tabuleiro Tabuleiro { get; set; }
+
+        public void IncrementarQuantidadeMovimentos(){
+            QuantidadeMovimentos++;
+        }
     }
 }

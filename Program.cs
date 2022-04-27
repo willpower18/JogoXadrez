@@ -3,10 +3,22 @@ using Jogo.Xadrez;
 
 try{
    
-   PosicaoXadrez posicaoX = new PosicaoXadrez('a', 1);
+    PartidaXadrez partida = new PartidaXadrez();
 
-   Console.WriteLine(posicaoX);
-   Console.WriteLine(posicaoX.ConverterPosicao());
+    while(!partida.Terminada){
+        Console.Clear();
+        Tela.ImprimirTabuleiro(partida.Tabuleiro);
+
+
+        Console.WriteLine();
+        Console.Write("Origem: ");
+        Posicao origem = Tela.LerPosicaoXadrez().ConverterPosicao();
+
+        Console.Write("Destino: ");
+        Posicao destino = Tela.LerPosicaoXadrez().ConverterPosicao();
+
+        partida.ExecutarMovimento(origem, destino);
+    }
 
     Console.ReadLine();
 }
