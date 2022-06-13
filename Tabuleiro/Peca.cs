@@ -1,5 +1,5 @@
 namespace Jogo.Tabuleiro{
-    class Peca{
+    abstract class Peca{
 
         public Peca(Tabuleiro tabuleiro, Cor cor)
         {
@@ -16,6 +16,8 @@ namespace Jogo.Tabuleiro{
 
         public void IncrementarQuantidadeMovimentos(){
             QuantidadeMovimentos++;
-        }
+        } 
+
+        public abstract bool[,] MovimentosPossiveis();
     }
 }
