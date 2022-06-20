@@ -18,6 +18,23 @@ namespace Jogo.Tabuleiro{
             QuantidadeMovimentos++;
         } 
 
+        public bool ExisteMovimentosPossiveis(){
+            bool [,] movimentosPossiveis = MovimentosPossiveis();
+            for(int linha = 0; linha < Tabuleiro.NumeroLinhas; linha++){
+                for(int coluna = 0; coluna < Tabuleiro.NumeroColunas; coluna++){
+                    if(movimentosPossiveis[linha, coluna] == true){
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public bool PodeMoverParaPosicao(Posicao posicao){
+            return MovimentosPossiveis()[posicao.Linha, posicao.Coluna];
+        }
+
         public abstract bool[,] MovimentosPossiveis();
     }
 }
