@@ -13,6 +13,35 @@ using Jogo.Xadrez;
             Console.WriteLine("  A B C D E F G H");
         }
 
+        public static void ImprimirPartida(PartidaXadrez partida){
+            Tela.ImprimirTabuleiro(partida.Tabuleiro);
+            Console.WriteLine();
+            ImprimirPecasCapturadas(partida);
+            Console.WriteLine($"Turno: {partida.Turno}");
+            Console.WriteLine($"Aguardando jogada: {partida.JogadorAtual}");
+        }
+
+        public static void ImprimirPecasCapturadas(PartidaXadrez partida){
+            Console.WriteLine("Peças Capturadas: ");
+            Console.Write("Brancas: ");
+            ImprimirConjunto(partida.ObterPecasCapturadas(Cor.Branca));
+            Console.WriteLine();
+            Console.Write("Pretas: ");
+            ConsoleColor auxiliar = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            ImprimirConjunto(partida.ObterPecasCapturadas(Cor.Preta));
+            Console.ForegroundColor = auxiliar;
+            Console.WriteLine();
+        }
+
+        public static void ImprimirConjunto(HashSet<Peca> pecas){
+            Console.Write("[ ");
+            foreach(Peca peca in pecas){
+                Console.Write(peca + " ");
+            }
+            Console.Write("]");
+        }
+
         public static void ImprimirTabuleiro(Tabuleiro tabuleiro, bool[,] posicoesPossiveis){
             
             ConsoleColor fundoOriginal = Console.BackgroundColor;
