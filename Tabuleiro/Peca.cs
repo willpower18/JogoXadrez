@@ -18,6 +18,10 @@ namespace Jogo.Tabuleiro{
             QuantidadeMovimentos++;
         } 
 
+        public void DecrementarQuantidadeMovimentos(){
+            QuantidadeMovimentos--;
+        } 
+
         public bool ExisteMovimentosPossiveis(){
             bool [,] movimentosPossiveis = MovimentosPossiveis();
             for(int linha = 0; linha < Tabuleiro.NumeroLinhas; linha++){

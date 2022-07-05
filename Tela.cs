@@ -19,6 +19,9 @@ using Jogo.Xadrez;
             ImprimirPecasCapturadas(partida);
             Console.WriteLine($"Turno: {partida.Turno}");
             Console.WriteLine($"Aguardando jogada: {partida.JogadorAtual}");
+
+            if(partida.Xeque)
+                Console.WriteLine($"Possibilidade de Xeque Mate!");
         }
 
         public static void ImprimirPecasCapturadas(PartidaXadrez partida){
