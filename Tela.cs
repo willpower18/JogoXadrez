@@ -18,10 +18,18 @@ using Jogo.Xadrez;
             Console.WriteLine();
             ImprimirPecasCapturadas(partida);
             Console.WriteLine($"Turno: {partida.Turno}");
-            Console.WriteLine($"Aguardando jogada: {partida.JogadorAtual}");
 
-            if(partida.Xeque)
-                Console.WriteLine($"Possibilidade de Xeque Mate!");
+            if(!partida.Terminada){
+                Console.WriteLine($"Aguardando jogada: {partida.JogadorAtual}");
+
+                if(partida.Xeque)
+                    Console.WriteLine($"Possibilidade de Xeque Mate!");
+            }
+            else{
+                Console.WriteLine("Xeque Mate!");
+                Console.WriteLine("Vencedor: " + partida.JogadorAtual);
+            }
+           
         }
 
         public static void ImprimirPecasCapturadas(PartidaXadrez partida){
