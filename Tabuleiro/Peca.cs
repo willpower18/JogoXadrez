@@ -35,7 +35,7 @@ namespace Jogo.Tabuleiro{
             return false;
         }
 
-        public bool PodeMoverParaPosicao(Posicao posicao){
+        public bool MovimentoPossivel(Posicao posicao){
             return MovimentosPossiveis()[posicao.Linha, posicao.Coluna];
         }
 
