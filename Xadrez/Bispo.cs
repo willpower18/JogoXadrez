@@ -20,7 +20,7 @@ namespace Jogo.Xadrez{
                 if(Tabuleiro.ObterPeca(pos) != null && Tabuleiro.ObterPeca(pos).Cor != Cor)
                     break;
                 
-                  pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
+                  pos.DefinirValores(pos.Linha - 1, pos.Coluna - 1);
             }   
 
             //NE
@@ -30,7 +30,7 @@ namespace Jogo.Xadrez{
                 if(Tabuleiro.ObterPeca(pos) != null && Tabuleiro.ObterPeca(pos).Cor != Cor)
                     break;
                 
-                pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna + 1);
+                pos.DefinirValores(pos.Linha - 1, pos.Coluna + 1);
             }     
 
             //SE
@@ -40,7 +40,7 @@ namespace Jogo.Xadrez{
                 if(Tabuleiro.ObterPeca(pos) != null && Tabuleiro.ObterPeca(pos).Cor != Cor)
                     break;
                 
-                pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
+                pos.DefinirValores(pos.Linha + 1, pos.Coluna + 1);
             }     
 
              //SO
@@ -50,7 +50,7 @@ namespace Jogo.Xadrez{
                 if(Tabuleiro.ObterPeca(pos) != null && Tabuleiro.ObterPeca(pos).Cor != Cor)
                     break;
                 
-                pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
+                pos.DefinirValores(pos.Linha + 1, pos.Coluna - 1);
             }     
 
             return matriz;
